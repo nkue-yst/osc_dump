@@ -6,6 +6,9 @@ on:
       - main
     types: [closed]
 
+env:
+  BUILD_TYPE: Release
+
 jobs:
   setup:
     runs-on: ubuntu-latest
