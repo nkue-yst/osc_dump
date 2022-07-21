@@ -1,0 +1,3 @@
+[submodule "thirdparty/oscpack"]
+	path = thirdparty/oscpack
+	url = git@github.com:RossBencina/oscpack.git
