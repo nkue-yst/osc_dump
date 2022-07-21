@@ -21,7 +21,7 @@ protected:
         std::cout << "Received osc message from \"";
         char addr_and_port[BUFF_SIZE];
         remote_end_pt.AddressAndPortAsString(addr_and_port);
-        std::cout << addr_and_port << "\"" << std::endl;
+        std::cout << addr_and_port << "\": " << msg.AddressPattern() << std::endl;
     }
 };
 
