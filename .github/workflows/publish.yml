@@ -9,7 +9,7 @@ on:
 jobs:
   setup:
     runs-on: ubuntu-latest
-    if: stratsWith(github.head_ref, 'release/v') && github.event.pull_request.merged = true
+    if: startsWith(github.head_ref, 'release/v') && github.event.pull_request.merged == true
     outputs:
       tag: ${{ steps.vars.outputs.tag }}
       upload_url: ${{ steps.create_release.outputs.upload_url }}
