@@ -1,6 +1,6 @@
 ### Setup cmake project ###
 cmake_minimum_required(VERSION 3.10)
-project(OSC_DUMP)
+project(OSC_TESTER)
 
 ### Setup C++ project ###
 enable_language(CXX)
@@ -37,3 +37,7 @@ add_library(oscpack
     ${OSCPACK_DIR}/osc/OscOutboundPacketStream.h
     ${OSCPACK_DIR}/osc/OscOutboundPacketStream.cpp
 )
+
+### Setup main project ###
+add_executable(osc_dump src/osc_dump.cpp)
+target_link_libraries(osc_dump oscpack)
