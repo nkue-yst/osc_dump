@@ -10,18 +10,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ### Setup oscpack ###
 set(OSCPACK_DIR ${CMAKE_SOURCE_DIR}/thirdparty/oscpack)
 include_directories(${OSCPACK_DIR})
-if(WIN32)
-    set(IpSystemTypePath ip/win32)
-else(WIN32)
-    set(IpSystemTypePath ip/posix)
-endif(WIN32)
 add_library(oscpack
     ${OSCPACK_DIR}/ip/IpEndpointName.h
     ${OSCPACK_DIR}/ip/IpEndpointName.cpp
     ${OSCPACK_DIR}/ip/NetworkingUtils.h
-    ${OSCPACK_DIR}/${IpSystemTypePath}/NetworkingUtils.cpp
+    ${OSCPACK_DIR}/ip/posix/NetworkingUtils.cpp
     ${OSCPACK_DIR}/ip/UdpSocket.h
-    ${OSCPACK_DIR}/${IpSystemTypePath}/UdpSocket.cpp
+    ${OSCPACK_DIR}/ip/posix/UdpSocket.cpp
     ${OSCPACK_DIR}/ip/PacketListener.h
     ${OSCPACK_DIR}/ip/TimerListener.h
     ${OSCPACK_DIR}/osc/OscTypes.h
