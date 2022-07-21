@@ -1,6 +1,6 @@
 ### Setup cmake project ###
 cmake_minimum_required(VERSION 3.10)
-project(OSC_TESTER)
+project(OSC_DUMP)
 
 ### Setup C++ project ###
 enable_language(CXX)
