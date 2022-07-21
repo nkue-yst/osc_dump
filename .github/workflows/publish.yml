@@ -90,10 +90,10 @@ jobs:
 
       - name: Create release file
         run: |
-          DIR=${{ steps.vars.outputs.dir }}/build
+          DIR=${{ steps.vars.outputs.dir }}
           DIST=${{ matrix.target }}
           mkdir -p dist/$DIST/$DIR
-          cp -r build/${{ matrix.artifact_name }} dist/$DIST/$DIR
+          cp -r build/${{ matrix.artifact_name }} README.md dist/$DIST/$DIR
           tar cvfz dist/${{ matrix.asset_name }}.tar.gz -C dist/$DIST $DIR
         shell: bash
 
