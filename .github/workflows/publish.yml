@@ -107,18 +107,3 @@ jobs:
           asset_name: ${{ matrix.asset_name }}.tar.gz
           asset_content_type: application/x-gzip
           upload_url: ${{ needs.setup.outputs.upload_url }}
-
-      - name: Extract version
-        id: extract-version
-        run: |
-          printf "::set-output name=%s::%s\n" tag-name "${GITHUB_REF#refs/tags/}"
-
-      - name: Update formula on tag
-        uses: "mislav/bump-homebrew-formula-action@v2"
-        with:
-          download-url: https://github.com/nkue-yst/osc_dump/releases/download/${{ steps.extract-version.outputs.tag-name }}/osc_dump-${{ steps.extract-version.outputs.tag-name }}.tar.gz
-          formula-name: osc_dump
-          homebrew-tap: nkue-yst/homebrew-brew
-        env:
-          COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
-
